@@ -55,5 +55,9 @@ export const search_game_url = (game_name: string) =>
   `${RAWG_BASE_URL}games?search=${game_name}&page_size=50&key=${RAWG_API_KEY}`;
 
 export const game_articles_url = () => {
-  return `${GS_BASE_URL}articles/?api_key=${GS_API_KEY}&format=json&limit=10`;
+  return `https://cors-anywhere.herokuapp.com/${GS_BASE_URL}articles/?api_key=${GS_API_KEY}&format=json&limit=12&sort=publish_date:desc&filter=categories:18`;
+};
+
+export const game_single_article_url = (id: string) => {
+  return `https://cors-anywhere.herokuapp.com/${GS_BASE_URL}articles/?api_key=${GS_API_KEY}&format=json&filter=id:${id}`;
 };

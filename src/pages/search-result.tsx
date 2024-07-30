@@ -40,7 +40,7 @@ export default function SearchResultPage() {
             Search results for <span className="text-accent">"{query}"</span>
           </H1>
           <div className="bg-gray-700 h-px w-full my-4" />
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {searchedGames.map((game) => (
               <GameCard key={game.id} game={game} />
             ))}

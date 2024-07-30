@@ -12,8 +12,10 @@ export default function Home() {
     dispatch(clearSearchedGames());
   }, [dispatch]);
   return (
-    <main className="flex flex-col items-center pt-36 px-3">
-      <H1>Find your favourite games</H1>
+    <main className="flex flex-col items-center pt-20 px-3">
+      <H1>
+        <span className="text-accent italic">Find</span> your favourite games
+      </H1>
       <p className="mb-12 mt-7 text-2xl lg:text-3xl opacity-75">
         Browse more than{' '}
         <span className="font-bold text-accent italic underline">

@@ -1,4 +1,3 @@
-'use client';
 import { FaBookOpen, FaHome } from 'react-icons/fa';
 import { FaFire } from 'react-icons/fa6';
 import { IoSearch } from 'react-icons/io5';
@@ -15,6 +14,13 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   useOnClickOutSide(menuRef, () => setIsMenuOpen(false));
+
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
+    e.stopPropagation();
+    setIsMenuOpen(false);
+  };
 
   return (
     <>
@@ -41,14 +47,12 @@ export default function Header() {
                 </Tooltip>
               </Link>
             ))}
+            {/* moible */}
             <div className="lg:hidden">
-              {/* Navbar */}
               <div className="relative">
-                {/* NavbarMenuToggle */}
                 <div
                   className="w-[40px] h-[40px] flex bg-theme-medium items-center justify-center rounded-md hover:bg-theme-light transition"
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  ref={menuRef}
                 >
                   {isMenuOpen ? (
                     <IoMdClose color="#FF6AD3" size="32" />
@@ -56,11 +60,18 @@ export default function Header() {
                     <CgMenuGridO color="#FF6AD3" size="32" />
                   )}
                 </div>
-                {/* NavbarMenu and links */}
+
                 {isMenuOpen && (
-                  <div className="absolute top-[4rem] right-0 w-[200px] bg-theme-dark p-2 rounded-md shadow-lg">
+                  <div
+                    className="absolute top-[4rem] right-0 w-[200px] bg-theme-dark p-2 rounded-md shadow-lg"
+                    ref={menuRef}
+                  >
                     {NavLinks.map((link) => (
-                      <Link to={link.to} key={link.to}>
+                      <Link
+                        to={link.to}
+                        key={link.to}
+                        onClick={handleLinkClick}
+                      >
                         <div className="flex gap-2 p-2 hover:bg-theme-light rounded-md transition">
                           <div>{link.icon}</div>
                           <p>{link.tooltip}</p>

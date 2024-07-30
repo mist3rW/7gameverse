@@ -10,7 +10,7 @@ export default function GameCard({ game }: GameCardProps) {
   return (
     <div className="rounded-lg cursor-pointer overflow-hidden p-2 lg:p-4 relative transition transform hover:scale-105 hover:border-2 hover:border-gray-800 bg-theme-light">
       <Link to={`/game/${game.id}`}>
-        <div className="relative w-full h-[360px] lg:h-96 overflow-hidden">
+        <div className="relative w-full h-[180px]  lg:h-72 overflow-hidden">
           <img
             src={game.background_image}
             alt={game.name}

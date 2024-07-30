@@ -8,3 +8,7 @@
   outline: none !important;
   border: none !important;
 }
+
+.js-click-tag {
+  display: none;
+}

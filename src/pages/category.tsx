@@ -24,7 +24,7 @@ export default function CategoryPage() {
   return (
     <>
       {isLoading && <Loader />}
-      {!isLoading && (
+      {!isLoading && popularGames && newGames && upcomingGames && (
         <div>
           <div>
             <GameCategorySection
@@ -60,7 +60,7 @@ function GameCategorySection({ title, games, link }: GameCategorySectionProps) {
   return (
     <div>
       <div className="flex justify-between p-4 items-center">
-        <h2 className="font-bold text-[3vw]">{title}</h2>
+        <h2 className="font-bold text-[4vw]">{title}</h2>
         <Link
           to={link}
           className="flex leading-4 gap-1 underline text-accent cursor-pointer"

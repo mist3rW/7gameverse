@@ -95,7 +95,9 @@ export default function SingleCategoryPage() {
           </div>
           <div className="flex flex-col items-center w-full gap-2 my-8">
             <H1>{type.charAt(0).toUpperCase() + type.slice(1)} Game</H1>
-            <p>Details about the {type} game will be displayed here.</p>
+            <p className="text-center">
+              Details about the {type} game will be displayed here.
+            </p>
           </div>
           <div className="my-auto grid max-w-8xl grid-cols-2 gap-5 p-4 md:grid-cols-3 lg:grid-cols-4 ">
             {gamesToDisplay.length > 0 &&

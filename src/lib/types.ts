@@ -34,3 +34,37 @@ export type gamesState = {
   error: string | null;
   isLoading: boolean;
 };
+
+export type TArticle = {
+  id: number;
+  title: string;
+  body: string;
+  authors: string;
+  deck: string;
+  lede: string;
+  image: {
+    square_tiny: string;
+    screen_tiny: string;
+    square_small: string;
+    original: string;
+  };
+  publish_date: string;
+  site_detail_url: string;
+  update_date: string;
+  associations: object[];
+  categories: object[];
+};
+
+export type articlesState = {
+  articles: TArticle[];
+  isLoading: boolean;
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  error: string | null;
+};
+
+export type singleArticleState = {
+  article: TArticle | null;
+  isLoading: boolean;
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  error: string | null;
+};

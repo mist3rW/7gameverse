@@ -1,5 +1,7 @@
 import gamesReducer from '../state/gamesSlice';
 import detailsReducer from '../state/detailsSlice';
+import articlesReducer from '../state/articlesSlice';
+import singleArticleSlice from '../state/singleArticleSlice';
 
 import { configureStore } from '@reduxjs/toolkit';
 
@@ -8,6 +10,8 @@ export const makeStore = () => {
     reducer: {
       games: gamesReducer,
       details: detailsReducer,
+      articles: articlesReducer,
+      article: singleArticleSlice,
     },
   });
 };

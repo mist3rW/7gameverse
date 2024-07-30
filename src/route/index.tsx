@@ -8,6 +8,8 @@ import CategoryPage from '../pages/category';
 import SingleGamePage from '../pages/single-game';
 import SingleCategoryPage from '../pages/single-category';
 import SearchResultPage from '../pages/search-result';
+import BlogPage from '../pages/blog';
+import SingleArticlePage from '../pages/single-article';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
       {
         path: 'search',
         element: <SearchResultPage />,
+      },
+      {
+        path: 'blog',
+        element: <BlogPage />,
+      },
+      {
+        path: 'article/:id',
+        element: <SingleArticlePage />,
       },
     ],
   },
