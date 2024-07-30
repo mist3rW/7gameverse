@@ -10,6 +10,7 @@ import SingleCategoryPage from '../pages/single-category';
 import SearchResultPage from '../pages/search-result';
 import BlogPage from '../pages/blog';
 import SingleArticlePage from '../pages/single-article';
+import NotFound from '../components/not-found';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: 'article/:id',
         element: <SingleArticlePage />,
+      },
+      {
+        path: '*',
+        element: <NotFound />,
       },
     ],
   },
