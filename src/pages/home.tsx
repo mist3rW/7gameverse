@@ -12,15 +12,15 @@ export default function Home() {
     dispatch(clearSearchedGames());
   }, [dispatch]);
   return (
-    <main className="flex flex-col items-center pt-20 px-3">
+    <main className="flex flex-col items-center py-10 px-3 h-full">
       <H1>
         <span className="text-accent italic">Find</span> your favourite games
       </H1>
-      <p className="mb-12 mt-7 text-2xl lg:text-3xl opacity-75">
+      <p className=" my-4 text-lg lg:text-3xl opacity-75">
         Browse more than{' '}
         <span className="font-bold text-accent italic underline">
-          869,858 games
-        </span>{' '}
+          871,031 games
+        </span>
       </p>
 
       <div id="search" className="w-full flex justify-center">
@@ -28,8 +28,8 @@ export default function Home() {
       </div>
 
       <section className="mt-4 flex flex-col justify-center items-center md:flex-row gap-y-2 gap-x-4 text-sm text-white/50">
-        <span>Popular category:&nbsp;</span>
-        <div className="space-x-2 font-semibold">
+        <span className="text-accent">Popular category:&nbsp;</span>
+        <div className="flex flex-col gap-2 justify-center items-center md:flex-row font-semibold">
           <Link
             to="/category/new"
             className="hover:text-accent hover:underline"
@@ -50,6 +50,16 @@ export default function Home() {
           </Link>
         </div>
       </section>
+      <div className="flex mt-auto">
+        source:&nbsp;
+        <Link
+          to="https://rawg.io/"
+          target="_blank"
+          className="text-accent font-bold"
+        >
+          rawg.io
+        </Link>
+      </div>
     </main>
   );
 }
