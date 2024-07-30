@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.rc-tooltip-inner {
+  background-color: #1e1e3f !important;
+  color: #fafafa !important;
+  outline: none !important;
+  border: none !important;
+}
