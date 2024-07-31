@@ -1,8 +1,6 @@
 // Base URL
 const RAWG_BASE_URL = 'https://api.rawg.io/api/';
 const RAWG_API_KEY = import.meta.env.VITE_RAWG_API_KEY;
-const GS_API_KEY = import.meta.env.VITE_GAMESPOT_API_KEY;
-const GS_BASE_URL = 'http://www.gamespot.com/api/';
 
 const getCurrentMonth = () => {
   const month = new Date().getMonth() + 1;
@@ -55,9 +53,9 @@ export const search_game_url = (game_name: string) =>
   `${RAWG_BASE_URL}games?search=${game_name}&page_size=50&key=${RAWG_API_KEY}`;
 
 export const game_articles_url = () => {
-  return `https://cors-anywhere.herokuapp.com/${GS_BASE_URL}articles/?api_key=${GS_API_KEY}&format=json&limit=12&sort=publish_date:desc&filter=categories:18`;
+  return `https://node7gameverse.tuayangweb.com/api/articles`;
 };
 
 export const game_single_article_url = (id: string) => {
-  return `https://cors-anywhere.herokuapp.com/${GS_BASE_URL}articles/?api_key=${GS_API_KEY}&format=json&filter=id:${id}`;
+  return `https://node7gameverse.tuayangweb.com/api/articles/${id}`;
 };

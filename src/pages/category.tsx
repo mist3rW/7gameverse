@@ -1,4 +1,4 @@
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../lib/hook';
 import { useEffect } from 'react';
 import { fetchCategoryGames } from '../state/gamesSlice';
@@ -8,8 +8,6 @@ import { MdArrowRightAlt } from 'react-icons/md';
 import Loader from '../components/loader';
 
 export default function CategoryPage() {
-  const path = useLocation().pathname;
-  console.log(path);
   const dispatch = useAppDispatch();
   const { popularGames, newGames, upcomingGames, isLoading } = useAppSelector(
     (state) => state.games

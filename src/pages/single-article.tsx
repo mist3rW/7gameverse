@@ -11,15 +11,12 @@ import { formatDate } from '../lib/util';
 export default function SingleArticlePage() {
   const location = useLocation();
   const pathId = location.pathname.split('/')[2];
-  console.log('pathId', pathId);
 
   const dispatch = useAppDispatch();
 
   const { article, isLoading, error } = useAppSelector(
     (state) => state.article
   );
-
-  console.log('article', article);
 
   useEffect(() => {
     dispatch(fetchSingleArticle(pathId));
